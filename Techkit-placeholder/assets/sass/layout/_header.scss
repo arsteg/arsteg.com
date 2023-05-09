@@ -1,0 +1,419 @@
+// Logo
+.logo {
+  position: relative;
+  &__sticky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    @include transitionSmooth();
+    .sticky-on.sticky & {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+// Header Top Bar
+.header-top {
+  &__padding {
+    padding-top: 16.5px;
+    padding-bottom: 16.5px;
+  }
+  &__border {
+    &_bottom {
+      border-bottom: 1px solid $gray-300;
+    }
+  }
+  &__info {
+    display: flex;
+    align-items: center;
+    &_item {
+      display: flex;
+      align-items: center;
+      padding-right: 40px;
+      margin-right: 40px;
+      border-right: 1px solid $gray-350;
+      @include respond-below(lg) {
+        padding-right: 35px;
+        margin-right: 35px;
+      }
+      &:last-child {
+        padding-right: 0px;
+        margin-right: 0px;
+        border-right: 1px solid transparent;
+      }
+    }
+    &_icon {
+      line-height: 0;
+      i {
+        line-height: 0;
+        display: inline-block;
+        margin-right: 15px;
+        &::before {
+          font-size: 27px;
+          color: $colorPrimary;
+        }
+      }
+    }
+    &_text {
+      &--small {
+        color: $gray-650;
+        font-size: 13px;
+        margin-bottom: 0;
+      }
+      &--big {
+        font-size: 15px;
+        font-weight: $font-weight-medium;
+        color: $colorSecondary;
+        font-family: $font-family-primary;
+      }
+    }
+    &_address {
+      @include respond-below(xlg) {
+        display: none;
+      }
+    }
+  }
+  &__social {
+    text-align: right;
+    ul {
+      display: inline-flex;
+    }
+    &_list {
+      margin-left: 7px;
+      &--link {
+        height: 35px;
+        width: 35px;
+        display: inline-block;
+        text-align: center;
+        line-height: 35px;
+        background: transparent;
+        border-radius: 7px;
+        @include transitionSmooth();
+        i {
+          @include transitionSmooth();
+        }
+      }
+      .facebook {
+        background: $colorFacebookLightBg;
+        i {
+          color: $colorFacebook;
+        }
+        &:hover {
+          background: $colorFacebook;
+          i {
+            color: $colorWhite;
+          }
+        }
+      }
+      .twitter {
+        background: $colorTwitterLightBg;
+        i {
+          color: $colorTwitter;
+        }
+        &:hover {
+          background: $colorTwitter;
+          i {
+            color: $colorWhite;
+          }
+        }
+      }
+      .instagram {
+        background: $colorInstagramLightBg;
+        i {
+          color: $colorInstagram;
+        }
+        &:hover {
+          background: $colorInstagram;
+          i {
+            color: $colorWhite;
+          }
+        }
+      }
+      .linkedin {
+        background: $colorLinkedinLightBg;
+        i {
+          color: $colorLinkedin;
+        }
+        &:hover {
+          background: $colorLinkedin;
+          i {
+            color: $colorWhite;
+          }
+        }
+      }
+      .pinterest {
+        background: $colorPinterestLightBg;
+        i {
+          color: $colorPinterest;
+        }
+        &:hover {
+          background: $colorPinterest;
+          i {
+            color: $colorWhite;
+          }
+        }
+      }
+    }
+  }
+  &--bg {
+    background-color: $colorZircon;
+  }
+  &__startup {
+    display: flex;
+    .header-top__info_icon {
+      & > i {
+        &::before {
+          font-size: 18px;
+          color: $colorText;
+        }
+      }
+    }
+    .header-top__info_item {
+      margin-right: 0;
+      border-right: 0px solid transparent;
+    }
+    .header-top__info_text--big {
+      color: $colorText;
+      font-family: $font-family-primary;
+    }
+  }
+}
+
+// Header Bottom
+.header-bottom {
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+// Header Search
+.header-search {
+  border: 1px solid #e2e2e2;
+  border-radius: 5px;
+  padding: 10px 22px;
+  width: 330px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding-right: 45px;
+  &__input {
+    border: 1px solid transparent;
+    width: 100%;
+    background: transparent;
+  }
+  &__button {
+    font-size: 15px;
+    background: transparent;
+    color: $colorSecondary;
+    border: 1px solid transparent;
+    font-size: 15px;
+    right: 22px;
+    @include center(vertical);
+  }
+  @include respond-below(xlg) {
+    display: none;
+  }
+  @include respond-below(md) {
+    display: block;
+  }
+  @include respond-below(sm) {
+    display: none;
+  }
+  @include respond-below(xs) {
+    margin: 0 15px;
+    width: 160px;
+    display: none;
+  }
+}
+
+// Home Two
+.header {
+  &--transparrent {
+    position: absolute;
+    right: 0;
+    left: 0;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 9999;
+    border-bottom: 1px solid rgba($colorEmperor, 0.15);
+    background: $colorWhite;
+    @include transitionSmooth;
+  }
+  &--software {
+    background: $colorWhite !important;
+  }
+  &-bottom {
+    &__software {
+      &_row {
+        justify-content: start;
+        .main-menu {
+          padding-left: 286px;
+          @include respond-below(xlg) {
+            padding-left: 30px;
+          }
+          ul {
+            li {
+              a {
+                &::before {
+                  height: 1px;
+                  bottom: -1px;
+                  z-index: 999;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Header Agency
+.header {
+  &--agency {
+    border-bottom: 1px solid transparent;
+    background: transparent;
+  }
+}
+.header-top {
+  &--padding {
+    padding: 20px 0;
+  }
+  &--border {
+    border-bottom: 1px solid rgba($colorWhite, 0.15);
+  }
+  &--agency {
+    .logo {
+      text-align: center;
+    }
+    .header-top__info_address {
+      justify-content: flex-end;
+    }
+    .info {
+      i {
+        display: inline-block;
+        &::before {
+          font-size: 19.82px;
+          color: $colorWhite;
+        }
+      }
+      span {
+        color: $colorWhite;
+        font-size: 18px;
+        font-family: $font-family-primary;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+// Header Vertical
+.header {
+  &--vertical {
+    background: transparent;
+    padding: 0 105px;
+    border-bottom: 1px solid transparent;
+    @include respond-below(sm) {
+      padding: 0 0;
+    }
+    .logo {
+      padding: 60px 0;
+      @include respond-below(sm) {
+        padding: 15px 0;
+      }
+    }
+  }
+}
+
+.header-right {
+  &--agency {
+    ul {
+      text-align: right;
+      li {
+        display: inline-block;
+        margin-left: 25px;
+        .search {
+          a {
+            color: $colorWhite;
+            font-size: 15px;
+          }
+          &--circle {
+            & > a {
+              width: 40px;
+              height: 40px;
+              display: inline-block;
+              line-height: 40px;
+              text-align: center;
+              background: rgba(255, 255, 255, 0.05);
+              border-radius: 50%;
+              &:hover {
+                background: rgba(255, 255, 255, 1);
+                color: $colorPrimary;
+              }
+            }
+          }
+          &--startup {
+            & > a {
+              background: rgba($colorPrimary, 0.1);
+              color: $colorPrimary;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Header Inner Page
+.header--inner {
+  border-bottom: 1px solid rgba($colorWhite, 0.15);
+}
+
+.header--inner.IsSticky {
+  .logo {
+    &__static {
+      visibility: hidden;
+      opacity: 0;
+      @include transitionSmooth();
+    }
+    &__sticky {
+      visibility: visible;
+      opacity: 1;
+      @include transitionSmooth();
+    }
+  }
+}
+
+.header {
+  &--modern {
+    transition: background 1s ease, padding 0.8s linear;
+    background-color: transparent;
+    .logo {
+      &__dark {
+        @include center(vertical);
+        left: 0;
+        visibility: hidden;
+        opacity: 0;
+        @include transitionSmooth();
+      }
+    }
+    &.sticky-on.sticky {
+      .logo {
+        &__dark {
+          visibility: visible;
+          opacity: 1;
+          @include transitionSmooth();
+        }
+        &__light {
+          visibility: hidden;
+          opacity: 0;
+          @include transitionSmooth();
+        }
+      }
+    }
+  }
+}

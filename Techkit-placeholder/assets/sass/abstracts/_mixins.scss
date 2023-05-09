@@ -1,0 +1,304 @@
+/*-- Margin Top --*/
+@for $i from 1 through 30 {
+  .mt-#{5 * $i} {
+    margin-top: 5px * $i;
+  }
+}
+
+/*-- Margin Bottom --*/
+@for $i from 1 through 30 {
+  .mb-#{5 * $i} {
+    margin-bottom: 5px * $i;
+  }
+}
+
+/*-- Margin Left --*/
+@for $i from 1 through 30 {
+  .ml-#{5 * $i} {
+    margin-left: 5px * $i;
+  }
+}
+
+/*-- Margin Right --*/
+@for $i from 1 through 30 {
+  .mr-#{5 * $i} {
+    margin-right: 5px * $i;
+  }
+}
+
+/*-- Padding Top --*/
+@for $i from 1 through 30 {
+  .pt-#{5 * $i} {
+    padding-top: 5px * $i;
+  }
+}
+
+/*-- Padding Bottom --*/
+@for $i from 1 through 30 {
+  .pb-#{5 * $i} {
+    padding-bottom: 5px * $i;
+  }
+}
+
+/*-- Padding Left --*/
+@for $i from 1 through 30 {
+  .pl-#{5 * $i} {
+    padding-left: 5px * $i;
+  }
+}
+
+/*-- Padding Right --*/
+@for $i from 1 through 30 {
+  .pr-#{5 * $i} {
+    padding-right: 5px * $i;
+  }
+}
+
+// Font Size
+@for $i from 1 through 200 {
+  .fs-#{1 * $i} {
+    font-size: 1px * $i;
+  }
+}
+
+// Position Vertical Horizontal Vertical
+@mixin center($position) {
+  position: absolute;
+
+  @if $position == "vertical" {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  } @else if $position == "horizontal" {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translate(-50%);
+  } @else if $position == "both" {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
+//   @include center(both);
+
+//   Font Size Convert To Rem
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+//   @include font-size(50px)
+
+// Rem Convert
+$rem-baseline: 16px !default;
+$rem-fallback: false !default;
+$rem-px-only: false !default;
+@function rem-separator($list, $separator: false) {
+  @if $separator== "comma" or $separator== "space" {
+    @return append($list, null, $separator);
+  }
+
+  @if function-exists("list-separator") ==true {
+    @return list-separator($list);
+  }
+
+  // list-separator polyfill by Hugo Giraudel (https://sass-compatibility.github.io/#list_separator_function)
+  $test-list: ();
+
+  @each $item in $list {
+    $test-list: append($test-list, $item, space);
+  }
+
+  @return if($test-list==$list, space, comma);
+}
+
+@mixin rem-baseline($zoom: 100%) {
+  font-size: $zoom / 16px * $rem-baseline;
+}
+
+@function rem-convert($to, $values...) {
+  $result: ();
+  $separator: rem-separator($values);
+
+  @each $value in $values {
+    @if type-of($value) == "number" and unit($value) == "rem" and $to== "px" {
+      $result: append($result, $value / 1rem * $rem-baseline, $separator);
+    } @else if
+      type-of($value) ==
+      "number" and
+      unit($value) ==
+      "px" and
+      $to==
+      "px"
+    {
+      $result: append($result, $value / $rem-baseline * 1rem, $separator);
+    } @else if type-of($value) == "list" {
+      $value-separator: rem-separator($value);
+      $value: rem-convert($to, $value...);
+      $value: rem-separator($value, $value-separator);
+      $result: append($result, $value, $separator);
+    } @else {
+      $result: append($result, $value, $separator);
+    }
+  }
+
+  @return if(length($result) ==1, nth($result, 1), $result);
+}
+
+@function rem($values...) {
+  @if $rem-px-only {
+    @return rem-convert(px, $values...);
+  } @else {
+    @return rem-convert(rem, $values...);
+  }
+}
+
+@mixin rem($properties, $values...) {
+  @if type-of($properties) == "map" {
+    @each $property in map-keys($properties) {
+      @include rem($property, map-get($properties, $property));
+    }
+  } @else {
+    @each $property in $properties {
+      @if $rem-fallback or $rem-px-only {
+        #{$property}: rem-convert(px, $values...);
+      }
+
+      @if not $rem-px-only {
+        #{$property}: rem-convert(rem, $values...);
+      }
+    }
+  }
+}
+
+// Background Opacity
+@mixin background-opacity($color, $opacity: 0.3) {
+  background: $color;
+  /* The Fallback */
+  background: rgba($color, $opacity);
+}
+
+// Position Vertical Horizontal Vertical
+@mixin center($position) {
+  position: absolute;
+
+  @if $position == "vertical" {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  } @else if $position == "horizontal" {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translate(-50%);
+  } @else if $position == "both" {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
+//   @include center(both);
+
+// Background Color Opacity
+@mixin background-opacity($color, $opacity: 0.3) {
+  background: $color;
+  /* The Fallback */
+  background: rgba($color, $opacity);
+}
+
+// Pesudo Background Overlay
+@mixin overlay($bgColor, $bgOpacity: 0.6) {
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba($bgColor, $bgOpacity);
+    z-index: 0;
+  }
+  //keep inner content above overlay
+  .row,
+  .inner {
+    position: relative;
+    z-index: 2;
+  }
+}
+/*-- Usage --*/
+.sect-mast {
+  @include overlay($colorBlack, 0.2);
+}
+
+// Transition
+@mixin transitionSmooth($property: all, $duration: 0.4s, $ease: ease) {
+  transition: $property $duration $ease;
+  -webkit-transition: $property $duration $ease;
+  -moz-transition: $property $duration $ease;
+  -ms-transition: $property $duration $ease;
+}
+
+// center position
+@mixin center-position($top: 50%, $left: 50%, $position: absolute) {
+  top: $top;
+  left: $left;
+  transform: translate(-#{$top}, -#{$left});
+  position: $position;
+}
+
+// Square
+@mixin square($size, $radius: 0) {
+  width: $size;
+  height: $size;
+
+  @if $radius != 0 {
+    border-radius: $radius;
+  }
+}
+
+// absolute-left-top
+@mixin absolute-left-top($position: absolute, $left: 0, $top: 0) {
+  position: $position;
+  left: $left;
+  top: $top;
+}
+
+// absolute-left-top-bottom
+@mixin absolute-left-top-bottom(
+  $position: absolute,
+  $left: 0,
+  $top: 0,
+  $bottom: 0
+) {
+  position: $position;
+  left: $left;
+  top: $top;
+  bottom: $bottom;
+}
+
+// absolute-left-bottom
+@mixin absolute-left-bottom($position: absolute, $left: 0, $bottom: 0) {
+  position: $position;
+  left: $left;
+  bottom: $bottom;
+}
+
+// absolute-right-top
+@mixin absolute-right-top($position: absolute, $right: 0, $top: 0) {
+  position: $position;
+  right: $right;
+  top: $top;
+}
+
+// absolute-right-bottom
+@mixin absolute-right-bottom($position: absolute, $right: 0, $bottom: 0) {
+  position: $position;
+  right: $right;
+  bottom: $bottom;
+}

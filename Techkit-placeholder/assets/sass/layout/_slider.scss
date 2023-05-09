@@ -1,0 +1,532 @@
+// Hero Area
+.slider {
+  &__bg {
+    @include overlay($colorSecondary, 0.5);
+    height: calc(100vh - 170px);
+    display: flex !important;
+    align-items: center;
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    @include respond-below(xs) {
+      height: 100%;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+    @include respond-below(lg) {
+      background-position: center;
+    }
+    @include respond-below(xlg) {
+      padding-right: 0;
+    }
+    &--startup {
+      @include overlay($colorPrimary, 0.31);
+      height: calc(100vh - 147px);
+      @include respond-below(lg) {
+        background-position: center top;
+      }
+      @include respond-below(md) {
+        height: 100%;
+      }
+    }
+  }
+
+  &-content {
+    &__title {
+      &_small {
+        color: $colorWhite;
+        font-size: 20px;
+
+        @include respond-below(xs) {
+          font-size: 14px;
+        }
+
+        font-weight: $font-weight-semibold;
+        letter-spacing: 0.1em;
+        position: relative;
+        line-height: 1;
+        display: inline-block;
+        padding-left: 15px;
+        margin-bottom: 14px;
+
+        &::before {
+          @include absolute-left-top-bottom();
+          content: "";
+          width: 5px;
+          height: 15px;
+          top: 50%;
+          transform: translateY(-50%);
+          background: $colorPrimary;
+        }
+      }
+
+      &_big {
+        animation-delay: 0.4s;
+        @include font-size(60px);
+        color: #fff;
+        text-decoration: underline;
+        line-height: 1.15;
+        font-weight: 600;
+        text-decoration-thickness: 4px;
+        text-underline-position: under;
+        text-underline-offset: -4px;
+        margin-bottom: 46px;
+        max-width: 570px;
+      }
+    }
+
+    &__text {
+      color: $colorWhite;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.6;
+      margin-bottom: 50px;
+      max-width: 570px;
+      @include respond-below(xlg) {
+        padding-right: 0;
+      }
+      @include respond-below(xs) {
+        padding-right: 0;
+      }
+    }
+
+    &--two {
+      .title {
+        &--big {
+          @include font-size(60px);
+          font-weight: 700;
+          margin-bottom: 30px;
+          text-decoration: none;
+        }
+      }
+    }
+    &--startup {
+      .slider-content {
+        &__title {
+          &_small {
+            padding-left: 0;
+            font-size: 16px;
+            text-transform: uppercase;
+            border: 1px dashed #fff;
+            padding: 14px 22px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            display: inline-block;
+            &::before {
+              display: none;
+            }
+          }
+          &_big {
+            @include font-size(60px);
+            text-decoration: none;
+            margin-bottom: 36px;
+          }
+        }
+        &__text {
+          font-size: 20px;
+          padding-right: 100px;
+          @include respond-below(md) {
+            padding-right: 0;
+          }
+        }
+        &__call {
+          @include respond-below(sm) {
+            display: block;
+            padding-top: 15px;
+          }
+          & > a {
+            font-size: 18px;
+            color: $colorWhite;
+            padding-left: 30px;
+            @include respond-below(sm) {
+              padding-left: 0;
+            }
+            & > strong {
+              font-weight: $font-weight-medium;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &--active {
+    .slick-track:focus {
+      outline: 0;
+    }
+    .slick-dots {
+      text-align: center;
+      line-height: 0;
+      margin-top: -96px;
+      z-index: 1;
+      position: absolute;
+      right: 0;
+      left: 0;
+
+      li {
+        display: inline-block;
+        margin: 0 3px;
+        line-height: 0;
+
+        button {
+          text-indent: -99999px;
+          width: 20px;
+          height: 8px;
+          border-radius: 6px;
+          border: 1px solid $colorWhite;
+          @include transitionSmooth();
+          background: transparent;
+        }
+      }
+
+      .slick-active {
+        button {
+          width: 30px;
+          background: transparent;
+          border: 2px solid transparent;
+          @include transitionSmooth();
+          background: $colorWhite;
+        }
+      }
+    }
+  }
+
+  &__shape {
+    position: absolute;
+    z-index: 1;
+
+    &--one {
+      right: 296px;
+      top: 193px;
+
+      @include respond-below(lg) {
+        right: 196px;
+      }
+
+      @include respond-below(xs) {
+        display: none !important;
+      }
+    }
+
+    &--two {
+      right: 0;
+      top: 0;
+
+      @include respond-below(lg) {
+        display: none !important;
+      }
+    }
+
+    &--three {
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      bottom: 293px;
+    }
+
+    &--four {
+      bottom: -314px;
+      right: 243px;
+    }
+
+    &--five {
+      bottom: 93px;
+      left: 342px;
+    }
+
+    &--six {
+      bottom: -257px;
+      left: 0px;
+    }
+  }
+}
+
+// Home Two
+.hero {
+  &--bg {
+    &__software {
+      background-position: center bottom;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &--padding {
+    &__software {
+      padding-left: 185px;
+      padding-right: 40px;
+      padding-top: 250px;
+      padding-bottom: 95px;
+
+      @include respond-below(xxlg) {
+        padding-left: 60px;
+        padding-right: 0px;
+        padding-top: 200px;
+      }
+
+      @include respond-below(md) {
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 113px;
+      }
+
+      @include respond-below(xs) {
+        padding-top: 65px;
+        padding-bottom: 45px;
+      }
+    }
+  }
+
+  &-img {
+    display: inline-block;
+    position: relative;
+
+    @include respond-below(xxlg) {
+      margin-left: -65px;
+      margin-right: -30%;
+    }
+
+    @include respond-below(lg) {
+      margin-left: 0;
+      margin-right: 0%;
+    }
+
+    @include respond-below(md) {
+      margin-left: -65px;
+      margin-right: -30%;
+    }
+
+    @include respond-below(xs) {
+      margin-right: 0%;
+      margin-left: 0;
+    }
+
+    &__animation {
+      &_list {
+        position: absolute;
+        height: 608px;
+        width: 100%;
+        top: 0;
+
+        @include respond-below(lg) {
+          display: none;
+        }
+
+        @include respond-below(md) {
+          display: block;
+        }
+        @include respond-below(xs) {
+          display: none;
+        }
+      }
+    }
+
+    &--animation {
+      .item {
+        display: inline-block;
+        position: absolute;
+      }
+
+      .item-1 {
+        bottom: -5px;
+        left: 33px;
+      }
+
+      .item-2 {
+        bottom: -5px;
+        right: 208px;
+      }
+
+      .item-3 {
+        bottom: 225px;
+        right: -25px;
+      }
+
+      .item-4 {
+        top: 49px;
+        right: 43px;
+      }
+
+      .item-5 {
+        top: 2px;
+        right: 176px;
+        @include respond-below(md) {
+          display: none;
+        }
+      }
+
+      .item-6 {
+        left: 429px;
+        top: -23px;
+      }
+    }
+
+    .image {
+      @include respond-below(xs) {
+        width: 100%;
+      }
+    }
+    &--right {
+      @include respond-below(xlg) {
+        margin-right: 0;
+        margin-left: 0;
+      }
+      @include respond-below(lg) {
+        margin-right: 0;
+        margin-left: 0;
+      }
+      .image {
+        @include respond-below(xlg) {
+          max-width: 745px;
+        }
+        @include respond-below(lg) {
+          max-width: 545px;
+        }
+        @include respond-below(md) {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
+  &-content {
+    position: relative;
+    z-index: 99;
+    @include respond-below(xxlg) {
+      padding-right: 0;
+    }
+
+    @include respond-below(lg) {
+      padding-right: 0;
+    }
+
+    &__title {
+      &_small {
+        color: $colorSecondary;
+        font-weight: $font-weight-semibold;
+        letter-spacing: 0.3em;
+        @include font-size(22px);
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 8px;
+
+        @include respond-below(lg) {
+          @include font-size(18px);
+        }
+        @include respond-below(xs) {
+          @include font-size(16px);
+        }
+      }
+
+      &_big {
+        @include font-size(60px);
+        font-weight: 600;
+        line-height: 1.18;
+        margin-bottom: 30px;
+
+        @include respond-below(xxlg) {
+          padding-right: 0;
+        }
+
+        @include respond-below(xlg) {
+          padding-right: 0;
+        }
+
+        @include respond-below(xs) {
+          padding: 0;
+        }
+      }
+    }
+
+    &__paragraph {
+      font-size: 18px;
+      color: $colorSecondary;
+      margin-bottom: 45px;
+      padding-right: 100px;
+
+      @include respond-below(lg) {
+        font-size: 16px;
+        padding-right: 0px;
+      }
+    }
+  }
+}
+
+// Hero Agency
+.hero-agency {
+  &--bg {
+    min-height: 939px;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center center;
+
+    @include respond-below(md) {
+      min-height: 620px;
+    }
+    @include respond-below(sm) {
+      min-height: 520px;
+    }
+  }
+}
+
+.hero-content {
+  &--agency {
+    span {
+      text-transform: capitalize;
+      font-weight: 400;
+      @include font-size(24px);
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      padding-right: 0;
+      @include font-size(80px);
+    }
+
+    .btn {
+      margin: 0 8px;
+      @include respond-below(xs) {
+        margin: 5px 0;
+      }
+    }
+  }
+}
+
+// Hero Modern
+.hero-modern {
+  &--bg {
+    background: center center no-repeat;
+    background-size: cover;
+    &::before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: rgba($colorBlack, 0.4);
+    }
+  }
+}
+
+.hero-content {
+  &--modern {
+    .title {
+      letter-spacing: 5px;
+    }
+    .heading {
+      @include font-size(100px);
+      margin-bottom: 20px;
+    }
+    .text {
+      font-size: 20px;
+      color: $colorWhite;
+    }
+    .btn {
+      margin-right: 17px;
+    }
+  }
+}

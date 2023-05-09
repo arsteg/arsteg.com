@@ -1,0 +1,59 @@
+// Form
+.contact-form {
+  padding-left: 15px;
+  @include respond-below(xs) {
+    padding-left: 0;
+  }
+  &__input {
+    width: 100%;
+    border: 1px solid $colorGallery;
+    font-size: 15px;
+    height: 57px;
+    border-radius: 3px;
+    padding: 12px 24px;
+    margin-bottom: 16px;
+    color: $colorSecondary;
+    font-family: $font-family-secondary;
+    outline: none;
+    background: transparent;
+    &::placeholder {
+      color: $colorSecondary;
+      font-family: $font-family-secondary;
+      font-size: 15px;
+    }
+    &_textarea {
+      height: 150px;
+    }
+  }
+  &__button {
+    font-size: 18px;
+    font-weight: 500;
+    display: block;
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    background: $colorPrimary;
+    color: $colorWhite;
+    @include transitionSmooth();
+    &:hover {
+      background: $colorSecondary;
+      @include transitionSmooth();
+    }
+  }
+  .nice-select {
+    border: 1px solid $colorGallery;
+    line-height: 30px;
+    outline: 0;
+    &::after {
+      border-bottom: 2px solid $colorSecondary;
+      border-right: 2px solid $colorSecondary;
+      height: 8px;
+      right: 26px;
+      width: 8px;
+    }
+    .list {
+      width: 100%;
+    }
+  }
+}

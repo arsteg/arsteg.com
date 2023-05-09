@@ -1,0 +1,78 @@
+// Faq
+.faq-accordion {
+  .accordion-item {
+    margin-bottom: 29px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    .accordion-header {
+      .accordion-button {
+        font-size: 20px;
+        color: $colorWhite;
+        background: transparent;
+        background: $colorPrimary;
+        border-radius: 5px;
+        padding: 17px 23px 17px 30px;
+        border: 1px solid transparent;
+        font-weight: $font-weight-medium;
+        @include respond-below(lg) {
+          font-size: 18px;
+        }
+        @include respond-below(sm) {
+          font-size: 16px;
+          padding: 15px 20px 15px 20px;
+        }
+        &:focus {
+          box-shadow: none;
+          outline: inherit;
+        }
+        &::after {
+          content: "\f078";
+          font-family: "Font Awesome 5 Free";
+          font-weight: 700;
+          background-image: none;
+          font-size: 16px;
+          text-align: right;
+        }
+      }
+      .collapsed {
+        background: transparent;
+        color: $colorSecondary;
+        border: 1px solid #dedbdb;
+      }
+    }
+  }
+  .accordion-body {
+    padding: 25px 30px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 7px 65px 0px rgba(0, 0, 0, 0.05);
+    @include transitionSmooth();
+    margin-top: 3px;
+    @include respond-below(sm) {
+      padding: 15px 20px;
+    }
+    p {
+      color: $colorText;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.faq-accordion {
+  &--startup {
+    .accordion-item {
+      margin-bottom: 9px;
+      .accordion-header {
+        .accordion-button {
+          font-size: 18px;
+          padding: 10px 20px 10px 20px;
+          &::after {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+}

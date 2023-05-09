@@ -1,0 +1,149 @@
+// Support Software
+.support-box {
+  padding-bottom: 100px;
+  border-bottom: 1px solid rgba($colorWhite, 0.2);
+}
+.support {
+  &__software {
+    &_content {
+      .title {
+        em {
+          font-weight: 300;
+        }
+      }
+    }
+    &_button {
+      text-align: right;
+      @include respond-below(xs) {
+        text-align: center;
+      }
+      .btn {
+        margin-left: 15px;
+        @include respond-below(xs) {
+          margin: 7.5px 0;
+        }
+      }
+    }
+  }
+}
+
+// Support Agency
+.solution-tab {
+  & ul {
+    & li.nav-item {
+      .nav-link {
+        padding: 0;
+        background: transparent;
+        border-radius: 0;
+      }
+    }
+  }
+  &__wrapper {
+    background: $colorZircon;
+    padding: 0 5px;
+  }
+  &__image {
+    margin-right: -264px;
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    @include respond-below(lg) {
+      margin-right: 0;
+    }
+    @include respond-below(xlg) {
+      margin-right: 0;
+    }
+    @include respond-below(md) {
+      margin-right: 0;
+    }
+    .image {
+      &--replace {
+        position: absolute;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        z-index: -1;
+        top: 30px;
+      }
+    }
+  }
+  .featured-agency {
+    background: $colorLinkWater;
+    padding: 28px 33px 28px 60px;
+    @include respond-below(lg) {
+      padding: 28px 15px 28px 15px;
+    }
+    border-radius: 0 5px 5px 0;
+    margin: 5px 0;
+    @include transitionSmooth();
+    &:hover {
+      background: $colorPrimary;
+      @include transitionSmooth();
+      border-radius: 0 0px 0px 0;
+      .header {
+        .icon {
+          color: $colorWhite;
+          @include transitionSmooth();
+        }
+      }
+      .article {
+        .heading {
+          color: $colorWhite;
+        }
+        .paragraph {
+          color: $colorWhite;
+        }
+      }
+    }
+    .header {
+      min-width: 70px;
+      padding-top: 8px;
+      @include respond-below(xs) {
+        min-width: 40px;
+      }
+      .icon {
+        @include font-size(60px);
+        color: $colorPrimary;
+        display: inline-flex;
+        @include transitionSmooth();
+      }
+    }
+    .article {
+      padding-left: 15px;
+      text-align: left;
+      .heading {
+        font-size: 24px;
+        @include respond-below(lg) {
+          font-size: 20px;
+        }
+        color: $colorSecondary;
+        margin-bottom: 5px;
+        &:hover,
+        &:focus,
+        &:active {
+          a {
+            color: $colorWhite !important;
+          }
+        }
+        a {
+          &:hover,
+          &:active {
+            color: $colorWhite !important;
+          }
+        }
+      }
+      .paragraph {
+        color: $colorText;
+        @include transitionSmooth();
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.solutions-button > .btn {
+  margin: 0px 7.5px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}

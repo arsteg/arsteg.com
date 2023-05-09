@@ -1,0 +1,89 @@
+// Address
+.contact-address {
+  &--bg {
+    @include overlay($colorBlack, 0.85);
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    padding: 74px 40px;
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    @include respond-below(xs) {
+      padding: 50px 15px;
+    }
+  }
+  &__item {
+    display: flex;
+    position: relative;
+    z-index: 2;
+    &_icon {
+      min-width: 45px;
+      padding-top: 8px;
+      i {
+        font-size: 40px;
+        color: $colorWhite;
+      }
+    }
+    &_text {
+      padding-left: 16px;
+      & h3 {
+        font-weight: 400;
+      }
+      & p {
+        margin-bottom: 0;
+        i {
+          font-weight: $font-weight-medium;
+          font-style: italic;
+          font-size: 24px;
+        }
+      }
+    }
+  }
+  &__form {
+    width: 100%;
+    position: relative;
+    &_input {
+      width: 100%;
+      border: 1px solid $colorWhite;
+      background: transparent;
+      font-size: 18px;
+      color: $colorWhite;
+      border-radius: 5px;
+      padding: 15px 30px;
+      @include transitionSmooth();
+      &::placeholder {
+        color: $colorWhite;
+      }
+    }
+    &_button {
+      @include center(vertical);
+      font-size: 14px;
+      color: $colorWhite;
+      background: transparent;
+      border: 1px solid transparent;
+      right: 30px;
+    }
+    &:hover,
+    &:focus {
+      .contact-address {
+        &__form {
+          &_input {
+            background: $colorWhite;
+            color: $colorSecondary;
+            border: 1px solid transparent;
+            @include transitionSmooth();
+            &::placeholder {
+              color: $colorSecondary;
+              @include transitionSmooth();
+            }
+          }
+          &_button {
+            color: $colorSecondary;
+            @include transitionSmooth();
+          }
+        }
+      }
+    }
+  }
+}

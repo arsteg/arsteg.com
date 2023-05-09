@@ -1,0 +1,59 @@
+.careers-block {
+  padding: 38px 55px 18px 55px;
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+  margin: 0 100px;
+  @include respond-below(md) {
+    padding: 38px 45px 18px 45px;
+    margin: 0 0px;
+  }
+  @include respond-below(sm) {
+    margin: 0 0;
+  }
+  @include respond-below(xs) {
+    padding: 15px 20px 5px 20px;
+  }
+  .job-button {
+    .btn {
+      background: #eff4ff;
+      color: $colorPrimary;
+      font-weight: $font-weight-medium;
+      &:hover {
+        background: $colorPrimary;
+        color: $colorWhite;
+      }
+    }
+  }
+  .job-meta {
+    .item {
+      margin-right: 80px;
+      font-weight: $font-weight-medium;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  .job-button,
+  .job-meta {
+    margin-bottom: 20px;
+  }
+}
+
+.feature-career {
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  padding: 35px 0;
+  margin-bottom: 20px;
+  h5 {
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+  img {
+    margin-bottom: 14px;
+  }
+  &:hover {
+    img {
+      animation: jump 0.4s linear;
+    }
+  }
+}

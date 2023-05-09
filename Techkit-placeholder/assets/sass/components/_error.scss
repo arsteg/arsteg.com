@@ -1,0 +1,33 @@
+// Error Page
+.error-inner {
+  text-align: center;
+  .error-content {
+    .heading {
+      @include font-size(50px);
+      font-weight: $font-weight-semibold;
+      margin-bottom: 20px;
+    }
+    .paragraph {
+      padding: 0 41px;
+      margin-bottom: 31px;
+    }
+  }
+}
+.error-bg {
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.error__thumb {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+}
+.error-thumb {
+  &--two {
+    position: absolute;
+    left: -60px;
+    bottom: 0;
+  }
+}

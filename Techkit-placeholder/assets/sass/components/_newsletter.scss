@@ -1,0 +1,70 @@
+// Newsletter
+.newsletter {
+  &__wrapper {
+    background: #f0f9fe;
+    padding: 0px 60px;
+    border-radius: 15px;
+    overflow: hidden;
+    @include respond-below(md) {
+      padding: 40px 60px;
+    }
+    @include respond-below(sm) {
+      padding: 35px 30px;
+    }
+  }
+  &__form {
+    &_input {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      input {
+        min-width: 330px;
+        height: 50px;
+        border: 1px solid #e5e5e5;
+        border-radius: 3px;
+        padding: 0 19px;
+        margin-bottom: 15px;
+        @include respond-below(xs) {
+          min-width: 100%;
+        }
+      }
+      button {
+        height: 50px;
+        background: $colorPrimary;
+        margin-bottom: 15px;
+        margin-left: 10px;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 0 30px;
+        color: $colorWhite;
+        @include respond-below(xs) {
+          margin-left: 0;
+        }
+        @include transitionSmooth();
+        &:hover {
+          background: $colorSecondary;
+          color: $colorWhite;
+          @include transitionSmooth();
+        }
+      }
+    }
+    &_agree {
+      span {
+        color: #7b7b7c;
+        margin-left: 5px;
+      }
+    }
+  }
+  &__thumb {
+    padding-top: 40px;
+    text-align: right;
+    @include respond-below(md) {
+      text-align: center;
+    }
+  }
+  &--minus {
+    margin-bottom: -85px;
+    position: relative;
+    z-index: 1;
+  }
+}

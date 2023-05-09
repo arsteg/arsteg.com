@@ -1,0 +1,84 @@
+// Counter
+.counter__item {
+  &_count {
+    font-size: 60px;
+    font-weight: $font-weight-medium;
+    line-height: 1;
+    margin-bottom: 13px;
+    display: inline-block;
+  }
+  &_title {
+    font-size: 24px;
+    margin-bottom: 0;
+    font-weight: $font-weight-regular;
+    @include respond-below(lg) {
+      font-size: 26px;
+    }
+  }
+}
+
+// Counter Software
+.counter {
+  &__software {
+    &_wrapper {
+      border-radius: 10px;
+      padding: 61px 10px 31px;
+      margin-top: -104px;
+      position: relative;
+      z-index: 1;
+    }
+    .counter-number {
+      @include font-size(40px);
+    }
+    .heading {
+      font-size: 26px;
+    }
+  }
+  &__modern {
+    display: flex;
+    .counter-number {
+      margin-bottom: 0;
+      color: $colorPrimary;
+      @include font-size(60px);
+      font-weight: 300;
+    }
+    .heading {
+      text-transform: uppercase;
+      font-size: 22px;
+      font-weight: $font-weight-semibold;
+      margin-left: 23px;
+    }
+  }
+  &__startup {
+    padding: 64px 25px;
+    border-radius: 10px;
+    background-color: $colorWhite;
+    box-shadow: 0px 0px 95px 0px rgba($colorBlack, 0.05);
+    margin: 1px;
+    .counter-number {
+      color: $colorPrimary;
+      margin-bottom: 5px;
+    }
+    .heading {
+      @include font-size(24px);
+      font-weight: $font-weight-medium;
+    }
+  }
+}
+
+.skills-startup {
+  padding-right: 85px;
+  padding-left: 21px;
+  padding-bottom: 40px;
+  position: relative;
+  @include respond-below(sm) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  &__shape {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: -25px;
+  }
+}

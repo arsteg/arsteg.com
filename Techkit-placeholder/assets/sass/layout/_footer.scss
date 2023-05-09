@@ -1,0 +1,349 @@
+// Footer
+.footer {
+  &--bg {
+    background: $colorMirage;
+  }
+  &--top {
+    &-software {
+      &--bg {
+        background: $colorMirageTwo;
+      }
+    }
+    &__software {
+      &_top {
+        &--border {
+          border-bottom: 1px solid #323238;
+        }
+      }
+    }
+  }
+  &--bottom {
+    &-software {
+      &--bg {
+        background: $colorMirageThree;
+        position: relative;
+        z-index: 9999;
+      }
+    }
+  }
+  &__software {
+    &_middle {
+      position: relative;
+      z-index: 9999;
+    }
+    &_address {
+      ul {
+        li {
+          color: $colorWhite;
+          font-size: 18px;
+          font-family: $font-family-secondary;
+          margin-bottom: 15px;
+          line-height: 1.6;
+          span {
+            padding-left: 5px;
+            color: $colorFooter;
+          }
+        }
+      }
+    }
+  }
+  &--logo {
+    &__software {
+      @include respond-below(xs) {
+        text-align: center;
+      }
+    }
+  }
+}
+.footer-widget {
+  &__social {
+    &.footer-social {
+      &--modern {
+        & > ul {
+          & > li {
+            & > a {
+              background: #efefef;
+            }
+          }
+        }
+      }
+    }
+    ul {
+      display: inline-flex;
+    }
+    &_list {
+      margin-right: 7px;
+      &--link {
+        height: 35px;
+        width: 35px;
+        display: inline-block;
+        text-align: center;
+        line-height: 37px;
+        background: #212338;
+        border-radius: 7px;
+        @include transitionSmooth();
+        i {
+          @include transitionSmooth();
+        }
+      }
+      .facebook {
+        i {
+          color: $colorFacebook;
+        }
+        &:hover {
+          background: $colorFacebook;
+          i {
+            color: $colorWhite;
+          }
+        }
+      }
+      .twitter {
+        i {
+          color: $colorTwitter;
+        }
+        &:hover {
+          background: $colorTwitter;
+          i {
+            color: $colorWhite;
+          }
+        }
+      }
+      .instagram {
+        i {
+          color: $colorInstagram;
+        }
+        &:hover {
+          background: $colorInstagram;
+          i {
+            color: $colorWhite;
+          }
+        }
+      }
+      .linkedin {
+        i {
+          color: $colorLinkedin;
+        }
+        &:hover {
+          background: $colorLinkedin;
+          i {
+            color: $colorWhite;
+          }
+        }
+      }
+      .pinterest {
+        i {
+          color: $colorPinterest;
+        }
+        &:hover {
+          background: $colorPinterest;
+          i {
+            color: $colorWhite;
+          }
+        }
+      }
+    }
+  }
+  &__text {
+    padding-right: 20px;
+    margin-bottom: 32px;
+    &_paragraph {
+      color: $colorFooter;
+    }
+  }
+  &__title {
+    margin-bottom: 17px;
+    &_heading {
+      color: $colorWhite;
+      font-size: 22px;
+      @include respond-below(lg) {
+        font-size: 18px;
+      }
+      position: relative;
+      padding-left: 15px;
+      &::before {
+        @include center(vertical);
+        content: "";
+        height: 15px;
+        width: 5px;
+        background: $colorPrimary;
+        left: 0;
+      }
+    }
+  }
+  &__menu {
+    &_list {
+      margin-bottom: 17px;
+      a {
+        color: $colorFooter;
+        font-size: 16px;
+        font-family: $font-family-secondary;
+        @include transitionSmooth();
+        display: inline-block;
+        position: relative;
+        &::before {
+          position: absolute;
+          content: "";
+          bottom: 2px;
+          width: 0%;
+          left: 100%;
+          background: #fff;
+          height: 1px;
+          opacity: 0;
+          visibility: hidden;
+          @include transitionSmooth();
+        }
+        &:hover {
+          color: $colorWhite;
+          &::before {
+            left: 0;
+            width: 100%;
+            opacity: 1;
+            visibility: visible;
+            transition: width 0.4s ease;
+          }
+        }
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__software {
+    &_social {
+      text-align: right;
+      @include respond-below(xs) {
+        text-align: center;
+      }
+      ul {
+        li {
+          &:last-child {
+            @include respond-below(xs) {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  &--software {
+    .heading {
+      padding-left: 0;
+      &::before {
+        display: none;
+      }
+    }
+    &__menu {
+      ul {
+        li {
+          a {
+            position: relative;
+            margin-left: 23px;
+            &:hover {
+              color: $colorPrimary;
+            }
+            &::after {
+              content: "\f101";
+              font-family: "Font Awesome 5 Free";
+              font-weight: 800;
+              position: absolute;
+              left: -23px;
+              top: 50%;
+              transform: translateY(-50%);
+            }
+            &::before {
+              background: $colorPrimary;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.footer__copyright {
+  &_text {
+    color: $gray-550;
+    font-size: 16px;
+    font-family: $font-family-primary;
+    text-align: center;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 11;
+    a {
+      color: $colorWhite;
+      &:hover {
+        color: $colorPrimary;
+      }
+    }
+  }
+}
+
+.footer-shape {
+  position: absolute;
+  @include respond-below(xs) {
+    display: none;
+  }
+  &--left {
+    width: 151px;
+    height: 155px;
+    left: 75px;
+    top: 68px;
+  }
+  &--right {
+    width: 789px;
+    height: 811px;
+    top: -53%;
+    right: -3%;
+  }
+  &--bottom {
+    bottom: 0;
+    right: 0;
+    z-index: 9;
+  }
+}
+
+.footer-modern {
+  &--text {
+    & > * {
+      color: $colorText;
+    }
+  }
+}
+
+.footer-title {
+  &--modern {
+    color: $colorSecondary;
+  }
+}
+
+.footer-menu {
+  &--modern {
+    & > ul {
+      & > li {
+        & > a {
+          color: $colorText;
+          &::before {
+            background: $colorPrimary;
+          }
+          &:hover {
+            color: $colorPrimary;
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer-copyright {
+  &--modern {
+    color: $colorText;
+    & > a {
+      color: $colorText;
+    }
+  }
+}
+
+.footer-bottom {
+  &--modern {
+    border-top-color: #e6e7ec;
+  }
+}

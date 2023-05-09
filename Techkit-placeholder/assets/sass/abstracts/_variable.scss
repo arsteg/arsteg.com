@@ -1,0 +1,100 @@
+// Fonts Variable
+$font-family-primary: "Barlow", sans-serif;
+$font-family-secondary: "Roboto", sans-serif;
+
+// Fonts Weight Variable
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// color
+$colorPrimary: #0554f2;
+$colorSecondary: #14133b;
+$colorWhite: #ffffff;
+$colorBlack: #000000;
+$colorText: #5b6674;
+$colorMidGray: #6e6e73;
+$colorAliceBlue: #f5faff;
+$colorHawkesBlue: #dee9fe;
+$colorMischka: #d7dae0;
+$colorZumthor: #edf6ff;
+$colorConcrete: #f2f2f2;
+$colorButton: #eff4ff;
+$colorGallery: #ededed;
+$colorFooter: #d7d7d7;
+$colorDanube: #6d8fd4;
+$colorZircon: #f6f9ff;
+$colorSilverSand: #bbbcbd;
+$colorPeriwinkleGray: #d7d7ef;
+$colorAlto: #d9d9d9;
+$colorBlueRibbon: #044ee4;
+$colorDoveGray: #6c6c6c;
+$colorJumbo: #6c6c6c;
+$colorMirage: #181a2e;
+$colorMirageTwo: #191b29;
+$colorMirageThree: #1c1e2e;
+$colorSnuff: #d8d8ef;
+$colorEmperor: #515151;
+$colorLinkWater: #e0e8f9;
+$colorMischka: #dbdbe3;
+$colorComet: #59597b;
+$colorEasternBlue: #25aab8;
+$colorTawnyPort: #6f273b;
+$colorCelery: #c2bb5d;
+$colorTitanWhite: #f0f2ff;
+$colorMercury: #e6e6e6;
+$colorWaterloo: #7e7d90;
+$colorSilverSand: #c7c9cc;
+$colorPortGore: #212046;
+$colorMartinique: #33325d;
+$colorLinkWater: #ebf1fb;
+$colorWildSand: #f5f5f5;
+
+$sectionBgOne: #f5f8ff;
+$sectionBgTwo: #f7faff;
+
+$sectionTitleColorOne: #8d8d8d;
+
+// social Color
+$colorFacebookLightBg: #edf3ff;
+$colorFacebook: #4064ac;
+$colorTwitterLightBg: #dff3ff;
+$colorTwitter: #1c9cea;
+$colorInstagramLightBg: #ffedf5;
+$colorInstagram: #d1005c;
+$colorLinkedinLightBg: #ecf8ff;
+$colorLinkedin: #016196;
+$colorPinterestLightBg: #fff1f3;
+$colorPinterest: #df0022;
+
+$colors: (
+  "primary": $colorPrimary,
+  "secondary": $colorSecondary,
+  "white": $colorWhite,
+  "black": $colorBlack,
+  "text": $colorText,
+);
+
+// i {  color: map-get($colors, "primary");  }
+
+// Gray
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #e1e1e1;
+$gray-350: #d4d3d3;
+$gray-400: #ced4da;
+$gray-500: #bdbdbd; // Text Color
+$gray-550: #aaaaaa; // Footer Text Color
+$gray-600: #868686; // Team Text Color
+$gray-650: #76767d; // Header Top Text Color
+$gray-750: #b7b7b7;
+$gray-700: #575757; // Testimonial Text Color
+$gray-800: #343a40;
+$gray-900: #313131;
+
+// Box Shadow
+$box-shadow: 0px 8px 35px 0px rgba($gray-700, 0.05);
+
+// Border Radius
+$border-radius-base: 4px;

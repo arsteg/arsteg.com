@@ -1,0 +1,53 @@
+.hero-inner {
+  &__bg {
+    min-height: 510px;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center center;
+    @include respond-below(md) {
+      min-height: 330px;
+    }
+    @include respond-below(xs) {
+      background-position: -130px;
+    }
+    @include overlay($colorSecondary, 0.35);
+    &_two {
+      @include overlay($colorSecondary, 0.75);
+    }
+    &_three {
+      @include overlay($colorSecondary, 0.85);
+    }
+  }
+}
+.page-breadcrumb {
+  text-align: center;
+  padding-top: 105px;
+  @include respond-below(md) {
+    padding-top: 80px;
+  }
+  .heading {
+    @include font-size(50px);
+    font-weight: $font-weight-medium;
+    color: $colorWhite;
+  }
+  .breadcrumb {
+    justify-content: center;
+    .breadcrumb-item {
+      @include font-size(18px);
+      color: $colorWhite;
+      font-weight: 300;
+      &::before {
+        color: $colorWhite;
+        font-weight: $font-weight-medium;
+      }
+      a {
+        color: $colorWhite;
+        font-weight: 400;
+        &:hover {
+          color: $colorPrimary;
+        }
+      }
+    }
+  }
+}

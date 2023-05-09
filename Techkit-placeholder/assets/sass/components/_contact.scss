@@ -1,0 +1,121 @@
+// Contact
+.contact {
+  &__agency {
+    text-align: center;
+    padding: 104px 0;
+    @include respond-below(xs) {
+      padding: 50px 0;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: $font-weight-medium;
+      letter-spacing: 0.08em;
+      display: block;
+      margin-bottom: 7px;
+      @include respond-below(lg) {
+        font-size: 18px;
+      }
+    }
+    .heading {
+      font-size: 40px;
+      margin-bottom: 40px;
+      letter-spacing: 0.06em;
+      @include respond-below(lg) {
+        font-size: 28px;
+      }
+      @include respond-below(sm) {
+        font-size: 25px;
+        margin-bottom: 30px;
+      }
+      @include respond-below(xs) {
+        font-size: 22px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+  &--agency {
+    @include overlay($colorBlack, 0.5);
+  }
+  &-form {
+    &--main {
+      border-radius: 10px;
+      background-color: rgb(255, 255, 255);
+      box-shadow: 0px 0px 68px 0px rgba(0, 0, 0, 0.07);
+      padding: 53px 45px;
+    }
+  }
+}
+
+.contact-item {
+  text-align: center;
+  border-radius: 5px;
+  background-color: $colorWhite;
+  box-shadow: 0px 7px 65px 0px rgba(0, 0, 0, 0.07);
+  padding: 57px 0;
+  .icon {
+    margin-bottom: 17px;
+    @include transitionSmooth();
+  }
+  &:hover {
+    .icon {
+      animation: jump 0.4s linear;
+    }
+  }
+  .title {
+    &--heading {
+      font-size: 26px;
+      font-weight: $font-weight-semibold;
+    }
+  }
+  .address,
+  .link {
+    font-size: 18px;
+    margin-bottom: 0;
+    line-height: 1.6;
+    color: $colorText;
+  }
+}
+
+.map-box.style-1 {
+  height: 480px;
+  border-radius: 15px;
+}
+
+.contact-thumb--startup {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -11;
+}
+
+.contact-padding {
+  &--startup {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    @include respond-below(lg) {
+      padding-top: 130px;
+      padding-bottom: 100px;
+    }
+  }
+}
+
+.contact-startup {
+  &--bg {
+    @include overlay($colorSecondary, 0.5);
+    background: center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+}
+
+.contact {
+  &__startup {
+    padding: 92px 0;
+    .title {
+      @include font-size(30px);
+    }
+    .heading {
+      @include font-size(50px);
+    }
+  }
+}

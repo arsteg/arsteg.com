@@ -1,0 +1,231 @@
+// Testimonials
+.review-block {
+  margin: 0 15px;
+  @include respond-below(sm) {
+    margin: 0 4.5px;
+  }
+  &__content {
+    background: $colorWhite;
+    padding: 71px 47px;
+    border-radius: 10px;
+    position: relative;
+    @include respond-below(xs) {
+      padding: 25px 25px;
+    }
+    p {
+      margin-bottom: 0;
+    }
+    &::before {
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 16px 15px 0 15px;
+      border-color: $colorWhite transparent transparent transparent;
+      bottom: -16px;
+      left: 70px;
+    }
+  }
+  &__quote {
+    &_icon {
+      position: absolute;
+      right: 40px;
+      top: 26px;
+    }
+  }
+  &__title {
+    margin-bottom: 14px;
+  }
+  &__auth {
+    padding: 30px 0 0 47px;
+    display: flex;
+    align-items: center;
+    &_name {
+      margin-bottom: 1px;
+      font-size: 22px;
+    }
+    &_title {
+      color: $gray-700;
+      font-size: 16px;
+      font-family: $font-family-secondary;
+    }
+    &_info {
+      padding-left: 15px;
+    }
+    &_image {
+      a {
+        display: inline-block;
+        width: 60px;
+      }
+    }
+  }
+}
+
+// Review Software
+.review-software {
+  text-align: center;
+  padding: 54px 35px 47px;
+  border: 1px solid $colorMercury;
+  border-radius: 10px;
+  @include respond-below(lg) {
+    padding: 40px 15px 37px;
+  }
+  &__image {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 35px;
+    .image {
+      border-radius: 50%;
+      border: 3px solid $colorTitanWhite;
+    }
+    .icon {
+      position: absolute;
+      right: -13px;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      border-radius: 50%;
+      color: $colorWhite;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 5px;
+      bottom: 4px;
+      &--one {
+        background: $colorEasternBlue;
+      }
+      &--two {
+        background: $colorTawnyPort;
+      }
+      &--three {
+        background: $colorCelery;
+      }
+    }
+  }
+  &__content {
+    .paragraph {
+      font-size: 18px;
+      font-family: $font-family-secondary;
+      padding-bottom: 30px;
+      display: block;
+      position: relative;
+      margin-bottom: 25px;
+      color: $colorMidGray;
+      &::after {
+        position: absolute;
+        content: "";
+        height: 3px;
+        width: 50px;
+        background: $colorPrimary;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+      }
+    }
+    .heading {
+      margin-bottom: 2px;
+    }
+    .title {
+      font-size: 18px;
+      color: $gray-700;
+    }
+  }
+}
+
+// Review Agency
+.review-agency {
+  .content {
+    text-align: center;
+    padding: 45px 45px;
+    @include respond-below(xs) {
+      padding: 30px 15px;
+    }
+    &::before {
+      display: none;
+    }
+    .quote {
+      position: static;
+      line-height: 1;
+      display: inline-flex;
+      width: 70px;
+      height: 70px;
+      justify-content: center;
+      align-items: center;
+      background: $colorPrimary;
+      color: $colorWhite;
+      font-size: 35px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+    .paragraph {
+      font-size: 18px;
+      font-weight: $font-weight-medium;
+      color: $colorSecondary;
+      font-style: italic;
+      @include respond-below(xs) {
+        font-size: 16px;
+      }
+    }
+    .auth {
+      padding-left: 0;
+      justify-content: center;
+    }
+    .info {
+      text-align: left;
+      h3 {
+        font-size: 18px;
+        font-weight: $font-weight-semibold;
+        margin-bottom: 0;
+      }
+      span {
+        font-size: 14px;
+      }
+    }
+  }
+  &--active {
+    .slick-dots {
+      text-align: center;
+      line-height: 0;
+      padding: 30px 0;
+      li {
+        display: inline-block;
+        margin: 0 3px;
+        line-height: 0;
+        button {
+          text-indent: -99999px;
+          width: 20px;
+          height: 10px;
+          border-radius: 5px;
+          border: 2px solid $colorAlto;
+          background: transparent;
+          @include transitionSmooth();
+        }
+      }
+      .slick-active {
+        button {
+          width: 30px;
+          background: $colorWhite;
+          border: 2px solid transparent;
+          @include transitionSmooth();
+        }
+      }
+    }
+  }
+}
+
+.testi-active {
+  &__col {
+    margin: 0 15px;
+  }
+}
+
+.review-modern {
+  border-color: #3276fe;
+  .paragraph {
+    &::after {
+      background-color: #3276fe;
+    }
+  }
+}

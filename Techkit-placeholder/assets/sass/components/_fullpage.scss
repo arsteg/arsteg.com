@@ -1,0 +1,214 @@
+.fullpage-section {
+  &__bg {
+    position: absolute;
+    width: 50%;
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+  }
+  .bg-color {
+    background: #09091d;
+  }
+  .bg-left {
+    left: 0;
+    .fullpage-service {
+      &--right {
+        right: 0;
+        left: auto;
+        .image,
+        .content {
+          border-radius: 15px 0px 0px 15px;
+        }
+      }
+    }
+  }
+  .bg-right {
+    right: 0;
+    .fullpage-service {
+      &--left {
+        right: auto;
+        @include respond-below(lg) {
+          width: 180px;
+          display: none;
+        }
+        .image,
+        .content {
+          border-radius: 0 15px 15px 0;
+        }
+      }
+    }
+  }
+  &__content {
+    padding-left: 120px;
+    padding-right: 15%;
+    @include respond-below(xlg) {
+      padding-left: 40px;
+      padding-right: 10%;
+    }
+    @include respond-below(xxlg) {
+      padding-left: 30px;
+      padding-right: 5%;
+    }
+    @include respond-below(sm) {
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-top: 70px;
+    }
+    .title {
+      &--small {
+        font-size: 24px;
+        color: #bfbebe;
+        font-weight: 400;
+        letter-spacing: 0.2em;
+        @include respond-below(lg) {
+          font-size: 20px;
+        }
+        @include respond-below(md) {
+          font-size: 17px;
+        }
+        @include respond-below(sm) {
+          font-size: 16px;
+        }
+      }
+      &--big {
+        @include font-size(60px);
+        font-weight: $font-weight-medium;
+        @include respond-below(lg) {
+          @include font-size(50px);
+        }
+        @include respond-below(md) {
+          @include font-size(40px);
+        }
+      }
+    }
+    .paragraph {
+      color: #bfbebe;
+      @include font-size(20px);
+      margin-bottom: 37px;
+      line-height: 1.4;
+      @include respond-below(lg) {
+        @include font-size(15px);
+      }
+      @include respond-below(md) {
+        @include font-size(15px);
+      }
+      @include respond-below(sm) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  .ms-right.ms-easing {
+    @include respond-below(sm) {
+      display: none;
+    }
+  }
+  .ms-left.ms-easing {
+    @include respond-below(sm) {
+      width: 100% !important;
+    }
+  }
+}
+
+.fullpage-service {
+  position: absolute;
+  @include respond-below(sm) {
+    position: static;
+    padding: 30px 15px;
+    .image,
+    .content {
+      border-radius: 0 !important;
+      width: 100%;
+    }
+  }
+  &--left {
+    right: 0;
+    bottom: 56px;
+    @include respond-below(xlg) {
+      bottom: 0px;
+    }
+  }
+  .image {
+    border-radius: 15px 0 0 15px;
+  }
+  &--right {
+    left: 0;
+    bottom: 267px;
+    @include respond-below(xlg) {
+      bottom: 211px;
+    }
+  }
+  .content {
+    border-radius: 0px 15px 15px 0px;
+    text-align: center;
+    background: #ffffff;
+    min-width: 240px;
+    min-height: 210px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .icon {
+      @include font-size(43px);
+      color: $colorBlack;
+    }
+    .title {
+      &--small {
+        font-size: 22px;
+        color: $colorPrimary;
+        font-weight: 400;
+      }
+      &--big {
+        font-size: 30px;
+        color: $colorSecondary;
+        font-weight: $font-weight-semibold;
+      }
+    }
+  }
+}
+
+#multiscroll-nav {
+  @include respond-below(sm) {
+    display: none;
+  }
+  li {
+    display: block;
+    width: 14px;
+    height: 13px;
+    margin: 25px;
+    position: relative;
+    a {
+      @include transitionSmooth();
+      span {
+        width: 10px;
+        height: 10px;
+        border: 1px solid transparent;
+        background: $colorWhite;
+        @include transitionSmooth();
+      }
+    }
+    .active {
+      @include transitionSmooth();
+      span {
+        background: $colorWhite;
+        width: 20px;
+        height: 20px;
+        top: -3px;
+        left: -3px;
+        @include transitionSmooth();
+      }
+    }
+  }
+}
+.fullpage-section {
+  .ms-left {
+    @include respond-below(sm) {
+      width: 100% !important;
+    }
+  }
+  .ms-right {
+    @include respond-below(sm) {
+      display: none;
+    }
+  }
+}

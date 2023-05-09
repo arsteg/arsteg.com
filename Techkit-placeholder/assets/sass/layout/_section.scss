@@ -1,0 +1,558 @@
+// Section Heading
+.section-heading {
+  &__title {
+    &_small {
+      color: $colorPrimary;
+      @include font-size(16px);
+      font-weight: $font-weight-medium;
+      position: relative;
+      padding-left: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      display: inline-block;
+      margin-bottom: 8px;
+
+      @include respond-below(xs) {
+        padding-left: 0;
+      }
+
+      &::before {
+        @include center(vertical);
+        content: "";
+        height: 15px;
+        width: 5px;
+        background: $colorPrimary;
+        left: 0;
+
+        @include respond-below(xs) {
+          display: none;
+        }
+      }
+    }
+
+    &_big {
+      @include font-size(40px);
+      font-weight: $font-weight-semibold;
+      br {
+        @include respond-below(lg) {
+          display: none;
+        }
+      }
+    }
+
+    &_medium {
+      a {
+        svg {
+          width: 20px;
+          color: $colorPrimary;
+        }
+      }
+    }
+  }
+
+  &--style2 {
+    span {
+      padding-left: 0;
+      color: $colorSilverSand;
+      font-weight: 500;
+      margin-bottom: 5px;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  &--style3 {
+    span {
+      color: $gray-500;
+
+      &::before {
+        background: $gray-500;
+      }
+    }
+  }
+  &--startup {
+    .section-heading {
+      &__title {
+        &_small {
+          padding-left: 0;
+          font-size: 15px;
+          letter-spacing: 0.06em;
+          padding: 4px 13px;
+          background: #e6eeff;
+          border-radius: 3px;
+          margin-bottom: 14px;
+          &::before {
+            display: none;
+          }
+          &.white-bg {
+            background-color: $colorWhite;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Section Software
+.section-software {
+  padding: 0 78px;
+
+  @include respond-below(lg) {
+    padding: 0 0;
+  }
+
+  &__title {
+    &_small {
+      font-size: 18px;
+      font-weight: $font-weight-medium;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      display: inline-block;
+      margin-bottom: 10px;
+
+      @include respond-below(xs) {
+        font-size: 15px;
+      }
+    }
+
+    &_big {
+      font-weight: $font-weight-semibold;
+      margin-bottom: 18px;
+      @include font-size(40px);
+
+      & > br {
+        @include respond-below(lg) {
+          display: none;
+        }
+      }
+
+      & span {
+        color: $colorPrimary;
+      }
+
+      br {
+        @include respond-below(sm) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__paragraph {
+    font-size: 16px;
+    color: $colorText;
+  }
+
+  &__light {
+    .title {
+      &--small {
+        color: $colorMischka;
+      }
+
+      &--big {
+        color: $colorWhite;
+      }
+    }
+
+    .paragraph {
+      color: $colorMischka;
+    }
+  }
+}
+
+// Section Agency
+.section-agency {
+  &__line {
+    height: 4px;
+    border-radius: 2px;
+    position: relative;
+    display: inline-block;
+
+    &_one {
+      width: 40px;
+    }
+
+    &_two {
+      width: 20px;
+    }
+
+    &_three {
+      width: 10px;
+    }
+  }
+
+  .color-secondary {
+    background: $colorWaterloo;
+  }
+
+  &__title {
+    &_big {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+// Padding
+.about--padding {
+  padding: 130px 0 100px;
+
+  @include respond-below(xs) {
+    padding: 100px 0 70px 0;
+  }
+}
+
+.about {
+  &-agency {
+    &--padding {
+      padding-top: 130px;
+      padding-bottom: 67px;
+    }
+  }
+
+  &--inner {
+    padding: 130px 0 100px 0;
+    @include respond-below(md) {
+      padding: 130px 0 67px 0;
+    }
+  }
+}
+
+.services--padding {
+  padding: 122px 0 80px;
+
+  @include respond-below(xs) {
+    padding: 97px 0 50px 0;
+  }
+}
+
+.services-key--padding {
+  padding: 122px 0 100px;
+
+  @include respond-below(xs) {
+    padding: 97px 0 70px 0;
+  }
+}
+
+.services-key {
+  &--about {
+    padding: 122px 0 117px;
+  }
+}
+
+.support {
+  &--padding {
+    padding-bottom: 362px;
+  }
+}
+
+.case {
+  &--minus {
+    margin-top: -434px;
+  }
+
+  &-active {
+    .slick-dots {
+      padding-top: 60px;
+      text-align: center;
+      line-height: 0;
+
+      li {
+        display: inline-block;
+        margin: 0 3px;
+        line-height: 0;
+
+        button {
+          text-indent: -99999px;
+          width: 20px;
+          height: 5px;
+          border-radius: 2.5px;
+          border: 1px solid transparent;
+          background: $colorAlto;
+          @include transitionSmooth();
+        }
+      }
+
+      .slick-active {
+        button {
+          width: 25px;
+          background: transparent;
+          border: 1px solid $colorAlto;
+          @include transitionSmooth();
+        }
+      }
+    }
+  }
+
+  &-bg {
+    &--chose {
+      background: #f8f8f8;
+    }
+  }
+}
+
+.review {
+  &--bg {
+    background: $colorZumthor;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 200px;
+      height: 100%;
+      background: $colorWhite;
+      right: 0;
+      top: 0;
+      bottom: 0;
+
+      @include respond-below(xxlg) {
+        width: 100px;
+      }
+
+      @include respond-below(xlg) {
+        width: 100px;
+      }
+
+      @include respond-below(lg) {
+        display: none;
+      }
+    }
+  }
+
+  &--padding {
+    padding: 122px 0 100px;
+
+    @include respond-below(xs) {
+      padding: 97px 0 70px 0;
+    }
+  }
+
+  &-wrapper {
+    margin-right: 295px;
+    padding-right: 170px;
+    margin-left: -30px;
+
+    @include respond-below(xxlg) {
+      margin-right: 60px;
+      padding-right: 190px;
+    }
+
+    @include respond-below(xlg) {
+      margin-right: 0;
+      padding-right: 95px;
+    }
+
+    @include respond-below(lg) {
+      margin-right: 0;
+      padding-right: 40px;
+    }
+
+    @include respond-below(sm) {
+      margin-right: 0;
+      padding-right: 0px;
+      margin-left: 0px;
+    }
+  }
+
+  &--active {
+    .slick-arrow {
+      width: 45px;
+      height: 45px;
+      background: transparent;
+      border: 1.5px solid $colorPrimary;
+      color: $colorPrimary;
+      border-radius: 100%;
+      position: absolute;
+      right: -130px;
+      top: 122px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      @include respond-below(xlg) {
+        right: -65px;
+      }
+
+      @include transitionSmooth();
+
+      i {
+        display: inline-flex;
+        font-size: 15px;
+      }
+
+      &:hover {
+        background: $colorPrimary;
+        border: 1.5px solid $colorPrimary;
+        color: $colorWhite;
+        @include transitionSmooth();
+
+        i {
+          color: $colorWhite;
+          @include transitionSmooth();
+        }
+      }
+    }
+
+    .slider-prev {
+      top: 186px;
+    }
+  }
+
+  &--software {
+    padding-bottom: 203px;
+  }
+
+  &-agency {
+    &--bg {
+      background-repeat: no-repeat;
+      background-position: center bottom;
+    }
+  }
+}
+
+.price {
+  &--padding {
+    padding: 122px 0 100px;
+
+    @include respond-below(xs) {
+      padding: 97px 0 70px 0;
+    }
+  }
+}
+
+.counter {
+  &--bg {
+    @include overlay($colorBlack, 0.6);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &--padding {
+    padding: 140px 0 125px;
+
+    @include respond-below(md) {
+      padding: 75px 0 50px;
+    }
+  }
+
+  &--software {
+    &-bg {
+      padding: 0 0 475px 0;
+      @include overlay($colorBlack, 0.9);
+    }
+  }
+}
+
+.blog {
+  &--padding {
+    padding: 122px 0 100px;
+
+    @include respond-below(xs) {
+      padding: 97px 0 70px 0;
+    }
+  }
+
+  &--software {
+    &-minus {
+      margin-top: -350px;
+    }
+  }
+}
+
+.footer {
+  &--padding {
+    padding: 130px 0 100px 0;
+
+    @include respond-below(xs) {
+      padding: 100px 0 70px 0;
+    }
+  }
+
+  &--bottom {
+    &-padding {
+      padding: 16px 0;
+    }
+
+    &-border {
+      border-top: 1px solid #282b43;
+    }
+  }
+
+  &--top {
+    position: relative;
+    z-index: 11;
+  }
+}
+
+.contact {
+  &--bg {
+    background: $colorZircon;
+  }
+
+  &--padding {
+    padding: 130px 0 100px;
+
+    @include respond-below(xs) {
+      padding: 100px 0 70px 0;
+    }
+  }
+}
+
+// Technology
+.tech {
+  &--bg {
+    @include overlay($colorSecondary, 0.9);
+  }
+}
+
+// Solutions
+.solution {
+  &--agency {
+    padding-top: 122px;
+    padding-bottom: 100px;
+  }
+}
+
+// Project
+.project {
+  &--agency {
+    padding-top: 228px;
+    padding-bottom: 100px;
+    background: $colorWildSand;
+    margin-top: -107px;
+  }
+}
+
+// Feature
+.feature {
+  &--about {
+    padding: 122px 0 100px;
+  }
+}
+
+// Service Solution
+.services-solutions {
+  &--minus {
+    margin-top: -45px;
+  }
+}
+
+.section-title {
+  &--modern {
+    padding: 0;
+    .title {
+      &--small {
+        color: $sectionTitleColorOne;
+        letter-spacing: 0.2em;
+        font-size: 20px;
+      }
+    }
+    .heading {
+      &--big {
+        font-weight: $font-weight-semibold;
+      }
+    }
+  }
+}
