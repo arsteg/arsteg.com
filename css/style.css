@@ -362,7 +362,7 @@ button:focus,
 }
 
 .main-nav {
-  background: #fff;
+  background-image: linear-gradient(to right, #1b56ae , white, white);
   z-index: 1;
 }
 .main-nav .navbar-brand {
