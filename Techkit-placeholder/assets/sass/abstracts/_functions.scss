@@ -1,5 +1,0 @@
-// Functions
-@function calculateRem($size) {
-  $vwSize: $size / 4px;
-  @return $vwSize * 1vw;
-}
