@@ -362,7 +362,7 @@ button:focus,
 }
 
 .main-nav {
-  background-image: linear-gradient(to right, #1b56ae , white, white);
+  background-image: linear-gradient(to right, #444546 , white, white);
   z-index: 1;
 }
 .main-nav .navbar-brand {
@@ -372,6 +372,35 @@ button:focus,
   position: relative;
   font-family: "Open Sans", sans-serif;
 }
+.lines{
+  position: absolute;
+    left: 0;
+    top: -80px;
+    width: 40%;
+    max-width: unset;
+    max-height: unset;
+}
+.bubble{
+  position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    max-width: unset;
+    max-height: unset;
+    -webkit-animation: rotate-center 100s linear infinite both;
+    animation: rotate-center 100s linear infinite both;
+}
+@keyframes rotate-center{
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+}
+
 .main-nav .navbar-nav .nav-item .nav-link {
   position: relative;
   text-align: center;
@@ -845,18 +874,18 @@ button:focus,
     margin: 0 auto;
   }
 }
-.service .service-box .service-item {
+.service-item {
   text-align: center;
   padding: 10px;
   margin: 20px 0;
 }
-.service .service-box .service-item i {
+ .service-item i {
   font-size: 20px;
   color: #2e7eed;
   display: inline-block;
   margin-bottom: 10px;
 }
-.service .service-box .service-item p {
+ .service-item p {
   font-size: 14px;
 }
 
@@ -1458,6 +1487,8 @@ hr {
 .create-stories .block img {
   width: 100%;
   margin-bottom: 20px;
+  height: 300px;
+
 }
 .create-stories .block h3 {
   margin-bottom: 10px;
