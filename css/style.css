@@ -410,7 +410,7 @@ button:focus,
 }
 
 .main-nav {
-  background-image: linear-gradient(to right, #444546, white, white);
+  background-image: linear-gradient(to right, #2e7eed, white, white);
   z-index: 1;
 }
 
@@ -2254,34 +2254,34 @@ hr {
     width: 100% !important;
     margin-top: 80px !important;
   }
-  .portfolio-items{
+  .company-fun-facts .row .portfolio-items{
     margin-top: 0% !important;
   }
-  .rs-parallax-wrap {
+  rs-fullwidth-wrap .revslider-initialised .rs-parallax-wrap {
     left: 10px !important;
   }
 
-  .blue-head {
+  rs-fullwidth-wrap .revslider-initialised .blue-head {
     top: 0 !important;
   }
 
-  .org_Name {
+  rs-fullwidth-wrap .revslider-initialised .org_Name {
     font-size: 20px !important;
   }
 
-  .org_name {
+  rs-fullwidth-wrap .revslider-initialised .org_name {
     top: 50px !important;
   }
 
-  .para {
+  rs-fullwidth-wrap .revslider-initialised .para {
     top: 120px !important;
   }
 
-  .paragraph {
+  rs-fullwidth-wrap .revslider-initialised .paragraph {
     font-size: 16px !important
   }
 
-  .building {
+  rs-fullwidth-wrap .revslider-initialised .building {
     top: 300px !important;
   }
 }
@@ -2315,7 +2315,7 @@ font-size: 12px;
     transform: translate3d(0, 0, 0);
   }
 }
-.block .port{
+.testimonial-slider .item .block .port{
   height: 200px;
   width: 300px;
 }
