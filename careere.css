@@ -15970,7 +15970,6 @@ h6 {
 }
 
 a {
-    color: var(--c-dark);
     outline: 0;
     -webkit-transition: all .3s ease;
     -o-transition: all .3s ease;
@@ -15979,7 +15978,6 @@ a {
 }
 
 a:focus,a:hover {
-    color: var(--c-active);
     text-decoration: none
 }
 
@@ -32990,13 +32988,11 @@ sup {
 }
 
 a {
-    color: #007bff;
     text-decoration: none;
     background-color: transparent
 }
 
 a:hover {
-    color: #0056b3;
     text-decoration: underline
 }
 
@@ -38742,7 +38738,6 @@ body.woocommerce-page .woocommerce form.checkout_coupon,body.woocommerce-page .w
 }
 
 body,html,p {
-    font-family: nunito sans;
     font-weight: 400;
     font-size: 18px;
     line-height: 26px;
@@ -38751,16 +38746,11 @@ body,html,p {
 }
 
 a {
-    font-family: nunito sans;
     font-weight: 400;
     font-size: 16px;
-    color: #2e7eed;
     font-style: normal
 }
 
-a:hover {
-    color: #a0ece5
-}
 
 h1,h2,h3,h4,h5,h6 {
     font-family: noto sans;
