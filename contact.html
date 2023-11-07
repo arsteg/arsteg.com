@@ -76,14 +76,11 @@
 =            Page Title            =
 =================================-->
 
-<section class="section page-title">
+<section class="section page-title pb-3">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-8 m-auto">
-				<!-- Page Title -->
 				<h1>Contact Us</h1>
-				<!-- Page Description -->
-				<p>Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Cras ultricies ligula sed magna dictum porta.</p>
 			</div>
 		</div>
 	</div>
@@ -137,27 +134,27 @@
 				<h2 class="mb-5 text-center">Drop us a mail</h2>
 			</div>
 			<div class="col-12">
-				<form action="">
+				<form id="contact-form">
 					<div class="row">
 						<!-- Name -->
 						<div class="col-md-6 mb-2">
-							<input class="form-control main" type="text" placeholder="Name" required>
+							<input class="form-control main" id="name" type="text" placeholder="Name" required>
 						</div>
 						<!-- Email -->
 						<div class="col-md-6 mb-2">
-							<input class="form-control main" type="email" placeholder="Your Email Address" required>
+							<input class="form-control main" id="email" type="email" placeholder="Your Email Address" required>
 						</div>
 						<!-- subject -->
 						<div class="col-md-12 mb-2">
-							<input class="form-control main" type="text" placeholder="Subject" required>
+							<input class="form-control main" id="subject" type="text" placeholder="Subject" required>
 						</div>
 						<!-- Message -->
 						<div class="col-md-12 mb-2">
-							<textarea class="form-control main" name="message" rows="10" placeholder="Your Message"></textarea>
+							<textarea class="form-control main" id="message" name="message" rows="10" placeholder="Your Message"></textarea>
 						</div>
 						<!-- Submit Button -->
 						<div class="col-12 text-right">
-							<button class="btn btn-main-md">Submit</button>
+							<button class="btn btn-main-md" id="submit-button">Submit</button>
 						</div>
 					</div>
 				</form>
@@ -165,6 +162,49 @@
 		</div>
 	</div>
 </section>
+
+<script>
+  // Event listener for form submission
+  document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent the default form submission behavior
+
+    // Get form input values
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const subject = document.getElementById("subject").value;
+    const message = document.getElementById("message").value;
+
+    // Create an object with the form data
+    const formData = {
+      name: name,
+      email: email,
+      subject: subject,
+      message: message,
+    };
+
+    // You can now use AJAX to send this data to your server-side script for processing and email sending.
+    // Example using the fetch API:
+    fetch("your-server-script.php", {
+      method: "POST",
+      body: JSON.stringify(formData),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          // Handle success (e.g., show a success message)
+        } else {
+          // Handle error (e.g., show an error message)
+        }
+      })
+      .catch((error) => {
+        // Handle network or other errors
+      });
+  });
+</script>
+
+
 
 <!--============================
 =            Footer            =
