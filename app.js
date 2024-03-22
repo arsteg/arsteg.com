@@ -21,9 +21,10 @@ const port = process.env.PORT || 3000;
 //app.use("/api/v1/", routes);
 
 app.get("/url", (req, res, next) => {
+    console.log(`api called}`);
     res.json(["Tony","Lisa","Michael","Ginger","Food"]);
    });
-   
+
 
 console.log(`process.env.PORT: ${process.env.PORT}`);
 
