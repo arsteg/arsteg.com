@@ -3,13 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "scripts": {    
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "debug": "ndb app.js",
+    "build": "robocopy . dist /s"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.3"
+    "@sendgrid/mail": "^8.1.1",
+    "express": "^4.18.3",
+    "dotenv": "^10.0.0"
   }
 }
