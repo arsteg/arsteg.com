@@ -20,6 +20,11 @@ const port = process.env.PORT || 3000;
 
 //app.use("/api/v1/", routes);
 
+app.get("/url", (req, res, next) => {
+    res.json(["Tony","Lisa","Michael","Ginger","Food"]);
+   });
+   
+
 console.log(`process.env.PORT: ${process.env.PORT}`);
 
 app.listen(port, () => {
