@@ -21,15 +21,18 @@ const router = express.Router();
  *                 type: string
  *               emailFrom:
  *                 type: string 
-*               subject:
+ *               subject:
  *                 type: string
  *               emailBody:
  *                 type: string 
+ *               realSender:
+ *                 type: string  
  *             required:
  *               - emailTo
  *               - emailFrom
  *               - subject
  *               - emailBody
+ *               - realSender
  *     responses:
  *       201:
  *         description: email sent Successfully
@@ -39,6 +42,8 @@ const router = express.Router();
  *         description: Server error
  */
 router.post('/sendEmail',  commonController.sendEmail);
+
+router.get('/test',  commonController.test);
 
 
 module.exports = router;
