@@ -35,8 +35,7 @@
 
 </head>
 
-<body class="body-wrapper" data-spy="scroll" data-target=".privacy-nav">
-
+<body class="body-wrapper" data-spy="scroll" data-target=".privacy-nav">  
 
   <nav class="navbar main-nav navbar-expand-lg px-2 px-sm-0 py-2 py-lg-0">
     <div class="container">
@@ -66,12 +65,12 @@
             <a class="nav-link " href="blog.html">Blogs</a>
           </li>
           <li class="nav-item @@contact active">
-            <a class="nav-link active" href="contact.html">Contact</a>
+            <a class="nav-link active" href="contact.html">Contact</a>            
           </li>
         </ul>
       </div>
     </div>
-  </nav>
+  </nav>  
 
   <!--================================
 =            Page Title            =
@@ -84,7 +83,8 @@
           <h1>Contact Us</h1>
         </div>
       </div>
-    </div>
+    </div>   
+  
   </section>
 
   <!--====  End of Page Title  ====-->
@@ -134,8 +134,20 @@
   <section class="contact-form section">
     <div class="container">
       <div class="row">
-        <div class="col-12">
-          <h2 class="mb-5 text-center">Drop us a mail</h2>
+        <div class="col-8 Left-align text">
+          <h2 class="mb-2 text-left">Drop us a mail</h2>          
+        </div>
+        <div class="col-4 Right-align text">
+          <div id="success-toast" class="toast bg-light border border-success toast-top-right" role="alert" aria-live="assertive" aria-atomic="true" data-delay="4000" style="top: 10px; right: 10px;">
+            <div class="toast-header float-right">              
+              <button type="button" class="ml-2 mb-2 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="toast-body">
+              Email sent successfully
+            </div>
+          </div>
         </div>
         <div class="col-12">
           <form id="contact-form">
@@ -166,19 +178,7 @@
         </div>
       </div>
     </div>
-  </section>
-  <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="3000">
-    <div class="toast-header">
-      <strong class="mr-auto">Success</strong>
-      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="toast-body">
-      Email sent successfully
-    </div>
-  </div>
-
+  </section>  
   <script>
     // Event listener for form submission
     document.getElementById("contact-form").addEventListener("submit", function (e) {
@@ -211,7 +211,8 @@
         .then((response) => {
           if (response.ok) {
             const toast = new bootstrap.Toast(document.getElementById('success-toast'));
-            toast.show();
+            toast.show();            
+
           } else {
 
           }
@@ -221,8 +222,6 @@
         });
     });
   </script>
-
-
 
   <!--============================
 =            Footer            =
@@ -314,6 +313,7 @@
   <div class="scroll-top-to">
     <i class="ti-angle-up"></i>
   </div>
+  
 
   <!-- JAVASCRIPTS -->
   <script src="plugins/jquery/jquery.min.js"></script>
@@ -326,7 +326,8 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgeuuDfRlweIs7D6uo4wdIHVvJ0LonQ6g"></script>
   <script src="plugins/google-map/gmap.js"></script>
 
-  <script src="js/script.js"></script>
+  <script src="js/script.js"></script>  
+  
 </body>
 
 </html>
