@@ -2325,4 +2325,22 @@ font-size: 12px;
   max-width: 400px !important;
 }
 
+.hero-shape{
+  animation: jumpAni 7s linear infinite;
+}
+@keyframes jumpAni{
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+
+40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+}
+100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+}
 /*# sourceMappingURL=style.css.map */
